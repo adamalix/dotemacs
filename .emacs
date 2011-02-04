@@ -9,12 +9,12 @@
   (add-to-list 'load-path (concat custom-basedir p)))
 
 
-;;; Hide the toolbar and friends
+;; Hide the toolbar and friends
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-;;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
-;;; Settings Theme
+;; Settings Theme
 (message "applying theme settings ...")
 (require 'color-theme)
 (setq color-theme-is-global t)
@@ -24,18 +24,18 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
 
-;;; Shell Settings
+;; Shell Settings
 (message "applying shell settings ...")
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'comint-output-filter-functions
           'comint-strip-ctrl-m)
 
-;;; Smooth Scrolling
+;; Smooth Scrolling
 (message "applying scrolling settings ...")
 (setq scroll-step 1
       scroll-conservatively 10000)
 
-;;; Fullscreen
+;; Fullscreen
 (cond ((eq system-type 'gnu/linux)
        (defun fullscreen ()
          (interactive)
@@ -50,49 +50,39 @@
 
        (global-set-key [f11] 'switch-full-screen)))
 
-;;(cond ((eq system-type 'darwin)
-;;       (defun toggle-fullscreen ()
-;;         (interactive)
-;;         (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
-;;                                                  nil
-;;                                                'fullboth)))
-;;
-;;       (global-set-key [(meta return)] 'toggle-fullscreen)))
 
 (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
 
-;;; Cursor and Line
+;; Cursor and Line
 (message "applying cursor settings ...")
 (setq-default cursor-type 'box)
 (setq-default show-trailing-whitespace t)
 (setq-default transient-mark-mode t)
-;(setq default-truncate-lines t)
 (blink-cursor-mode 1)
 (show-paren-mode 1)
 
-;;; Font Settings
+;; Font Settings
 (message "applying font settings ...")
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil
 			:family "consolas" :height 130)
   (set-default-font "Consolas-13"))
 
-;;; set tab width in java
-;;; from emacs wiki
-(add-hook 'java-mode-hook (lambda ()
-                            (setq c-basic-offset 2)))
+;; set tab width in java from emacs wiki
 
-;;; Default Frame size
-;;; from emacs wiki
+(add-hook 'java-mode-hook
+  (lambda ()
+    (setq c-basic-offset 2)))
 
-;; (add-to-list 'default-frame-alist '(height . 48))
-;; (add-to-list 'default-frame-alist '(width . 80))
+;; Emacs 23 Meta options for mac from emacs wiki
+(if (eq system-type 'darwin)
+    (setq mac-option-key-is-meta nil))
+(if (eq system-type 'darwin)
+    (setq mac-command-key-is-meta t))
+(if (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta))
+(if (eq system-type 'darwin)
+    (setq mac-option-modifier nil))
 
-;;; Emacs 23 Meta options for mac
-;;; from emacs wiki
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
-
+;; Tramp mode
 (setq tramp-default-method "ssh")
