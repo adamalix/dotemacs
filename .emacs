@@ -11,7 +11,7 @@
 
 ;; Hide the toolbar and friends
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+ (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; Settings Theme
@@ -86,3 +86,11 @@
 
 ;; Tramp mode
 (setq tramp-default-method "ssh")
+
+;; Time stamps in buffers
+(display-time)
+
+;; package management
+(require 'package)
+(add-to-list 'package-archives
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
