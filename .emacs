@@ -92,5 +92,12 @@
 
 ;; package management
 (require 'package)
+(package-initialize)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+
+;; Set indentation in html to 4
+;; thanks roderyc
+(add-hook 'html-mode-hook
+          (lambda ()
+            (setq-default sgml-basic-offset 4)))
