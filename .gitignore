@@ -3,6 +3,6 @@ auto-save-list
 *.*~
 *.elc
 session*
-tramp
 semanticdb
 elpa
+url
