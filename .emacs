@@ -22,7 +22,7 @@
 (color-theme-dark-laptop)
 
 (setq-default indent-tabs-mode nil)
-(setq tab-width 2)
+(setq tab-width 4)
 
 ;; Shell Settings
 (message "applying shell settings ...")
@@ -71,8 +71,8 @@
 ;; set tab width in java from emacs wiki
 
 (add-hook 'java-mode-hook
-  (lambda ()
-    (setq c-basic-offset 2)))
+          (lambda ()
+            (setq-default c-basic-offset 4)))
 
 ;; Emacs 23 Meta options for mac from emacs wiki
 (if (eq system-type 'darwin)
@@ -101,3 +101,5 @@
 (add-hook 'html-mode-hook
           (lambda ()
             (setq-default sgml-basic-offset 4)))
+
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))) 
