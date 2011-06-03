@@ -102,4 +102,4 @@
           (lambda ()
             (setq-default sgml-basic-offset 4)))
 
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))) 
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
