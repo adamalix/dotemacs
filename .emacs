@@ -94,12 +94,21 @@
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+
+;; Slime shit
+(add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
 
 ;; Set indentation in html to 4
 ;; thanks roderyc
 (add-hook 'html-mode-hook
           (lambda ()
             (setq-default sgml-basic-offset 4)))
+
+(require 'paredit)
+(dolist (hook '(emacs-lisp-mode-hook
+                lisp-mode-hook
+                slime-repl-mode-hook))
+  (add-hook hook 'enable-paredit-mode))
 
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
