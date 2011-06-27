@@ -42,16 +42,16 @@
          (set-frame-parameter nil 'fullscreen
                               (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 
-       (global-set-key [f11] 'fullscreen)
+       (global-set-key [(meta return)] 'fullscreen)
 
        (defun switch-full-screen ()
          (interactive)
          (shell-command "wmctrl -r :ACTIVE: -btoggle,fullscreen"))
 
-       (global-set-key [f11] 'switch-full-screen)))
+       (global-set-key [(meta return)] 'switch-full-screen)))
 
-
-(global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
+(if (eq system-type 'darwin)
+    (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
 
 ;; Cursor and Line
 (message "applying cursor settings ...")
