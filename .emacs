@@ -112,3 +112,5 @@
   (add-hook hook 'enable-paredit-mode))
 
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH")))
+
