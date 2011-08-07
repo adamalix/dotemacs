@@ -114,3 +114,11 @@
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH")))
 
+(setq make-backup-files t)
+(setq version-control t)
+; Save all backup file in this directory.
+(setq backup-directory-alist
+      (quote ((".*" . "~/backup/emacs_autosave/"))))
+; otherwise it keeps asking
+(setq kept-new-versions 30)
+(setq delete-old-versions t)
