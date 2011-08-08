@@ -11,7 +11,7 @@
 
 ;; Hide the toolbar and friends
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
- (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; Settings Theme
@@ -111,11 +111,12 @@
                 slime-repl-mode-hook))
   (add-hook hook 'enable-paredit-mode))
 
-;; Ubuntu paths
+;; Paths
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
 (if (eq system-type 'gnu/linux)
-    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
-(if (eq system-type 'gnu/linux)
-    (setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH"))))
+    (setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH")))
+  (setenv "PATH" (concat "/Users/adam/bin:" (getenv "PATH"))))
 
 
 
