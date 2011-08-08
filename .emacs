@@ -111,6 +111,11 @@
                 slime-repl-mode-hook))
   (add-hook hook 'enable-paredit-mode))
 
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
-(setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH")))
+;; Ubuntu paths
+(if (eq system-type 'gnu/linux)
+    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
+(if (eq system-type 'gnu/linux)
+    (setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH"))))
 
+
+(put 'narrow-to-region 'disabled nil)
