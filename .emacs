@@ -131,3 +131,6 @@
 (setq kept-new-versions 30)
 (setq delete-old-versions t)
 
+;; start the server
+(setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
+(server-start)
