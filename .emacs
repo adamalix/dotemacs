@@ -65,7 +65,7 @@
 (message "applying font settings ...")
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil
-			:family "consolas" :height 130)
+			:family "consolas" :height 120)
   (set-default-font "Consolas-11"))
 
 ;; set tab width in java from emacs wiki
