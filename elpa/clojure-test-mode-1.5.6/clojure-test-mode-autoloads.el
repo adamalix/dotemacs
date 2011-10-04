@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (clojure-test-mode) "clojure-test-mode" "clojure-test-mode.el"
-;;;;;;  (19952 6389))
+;;;;;;  (20051 56192))
 ;;; Generated autoloads from clojure-test-mode.el
 
 (autoload 'clojure-test-mode "clojure-test-mode" "\
@@ -20,8 +20,8 @@ with a \"test.\" bit on it." (let ((ns (clojure-find-package))) (when (search "t
 
 ;;;***
 
-;;;### (autoloads nil nil ("clojure-test-mode-pkg.el") (19952 6389
-;;;;;;  983947))
+;;;### (autoloads nil nil ("clojure-test-mode-pkg.el") (20051 56192
+;;;;;;  500090))
 
 ;;;***
 
