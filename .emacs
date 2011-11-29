@@ -134,3 +134,17 @@
 ;; start the server
 (setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
 (server-start)
+
+;; Experimental ensime mode
+;; Load the ensime lisp code...
+(if (eq system-type 'darwin)
+    (add-to-list 'load-path "~/temp/ensime_2.9.2RC3/elisp/"))
+(if (eq system-type 'darwin)
+    (require 'ensime))
+
+;; This step causes the ensime-mode to be started whenever
+;; scala-mode is started for a buffer. You may have to customize this step
+;; if you're not using the standard scala mode.
+(if (eq system-type 'darwin)
+    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+
