@@ -65,8 +65,8 @@
 (message "applying font settings ...")
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil
-			:family "consolas" :height 120)
-  (set-default-font "Consolas-11"))
+			:family "consolas" :height 140)
+  (set-default-font "Consolas-14"))
 
 ;; set tab width in java from emacs wiki
 
@@ -141,6 +141,8 @@
     (add-to-list 'load-path "~/temp/ensime_2.9.2RC3/elisp/"))
 (if (eq system-type 'darwin)
     (require 'ensime))
+;; we need to extend the exec-path so we can call scala / sbt in ensime
+(setq exec-path (append exec-path (list "/usr/local/bin")))
 
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
