@@ -52,6 +52,8 @@
 
 (if (eq system-type 'darwin)
     (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
+(if (eq system-type 'darwin)
+    (global-set-key (kbd "C-x n") 'switch-to-buffer))
 
 ;; Cursor and Line
 (message "applying cursor settings ...")
@@ -65,7 +67,7 @@
 (message "applying font settings ...")
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil
-			:family "consolas" :height 140)
+			:family "courier" :height 140)
   (set-default-font "Consolas-14"))
 
 ;; set tab width in java from emacs wiki
@@ -138,9 +140,13 @@
 ;; Experimental ensime mode
 ;; Load the ensime lisp code...
 (if (eq system-type 'darwin)
-    (add-to-list 'load-path "~/temp/ensime_2.9.2RC3/elisp/"))
+    (add-to-list 'load-path "~/.ensime/elisp/"))
 (if (eq system-type 'darwin)
     (require 'ensime))
+(if (eq system-type 'darwin)
+    (setenv "ENSIME_JVM_ARGS" "-Xms1G -Xmx2G -Dfile.encoding=UTF-8"))
+(if (eq system-type 'darwin)
+    (setenv  "SBT_OPTS" "-Xms1G -Xmx2G -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"))
 ;; we need to extend the exec-path so we can call scala / sbt in ensime
 (setq exec-path (append exec-path (list "/usr/local/bin")))
 
@@ -150,3 +156,12 @@
 (if (eq system-type 'darwin)
     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
+;; Revert all open buffers
+(defun revert-all-buffers ()
+    "Refreshes all open buffers from their respective files."
+    (interactive)
+    (dolist (buf (buffer-list))
+      (with-current-buffer buf
+        (when (and (buffer-file-name) (not (buffer-modified-p)))
+          (revert-buffer t t t) )))
+    (message "Refreshed open files.") )
