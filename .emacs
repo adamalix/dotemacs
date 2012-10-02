@@ -1,25 +1,19 @@
 (message "started loading settings ...")
 
-(setq custom-basedir (expand-file-name "~/.emacs.d/"))
-(add-to-list 'load-path custom-basedir)
-(add-to-list 'load-path "/usr/local/plt/bin")
-(add-to-list 'load-path "/usr/local/bin")
 
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+(setq custom-basedir (expand-file-name "~/.emacs.d/"))
+(add-path custom-basedir)
 
 ;; Hide the toolbar and friends
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; Settings Theme
 (message "applying theme settings ...")
-(require 'color-theme)
-(setq color-theme-is-global t)
-(color-theme-initialize)
-(color-theme-dark-laptop)
+(load-theme 'wombat)
 
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
@@ -76,7 +70,7 @@
           (lambda ()
             (setq-default c-basic-offset 4)))
 
-;; Emacs 23 Meta options for mac from emacs wiki
+;; Emacs Meta options for mac from emacs wiki
 (if (eq system-type 'darwin)
     (setq mac-option-key-is-meta nil))
 (if (eq system-type 'darwin)
@@ -92,12 +86,6 @@
 ;; Time stamps in buffers
 (display-time)
 
-;; package management
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-
 ;; Slime shit
 (add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
 
@@ -106,6 +94,8 @@
 (add-hook 'html-mode-hook
           (lambda ()
             (setq-default sgml-basic-offset 4)))
+
+(package-initialize)
 
 (require 'paredit)
 (dolist (hook '(emacs-lisp-mode-hook
@@ -164,4 +154,4 @@
       (with-current-buffer buf
         (when (and (buffer-file-name) (not (buffer-modified-p)))
           (revert-buffer t t t) )))
-    (message "Refreshed open files.") )
+    (message "Refreshed open files."))
