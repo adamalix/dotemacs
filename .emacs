@@ -1,5 +1,6 @@
 (message "started loading settings ...")
 
+(column-number-mode)
 
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
