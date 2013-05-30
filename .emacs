@@ -57,13 +57,14 @@
 (setq-default transient-mark-mode t)
 (blink-cursor-mode 1)
 (show-paren-mode 1)
+(set-cursor-color "IndianRed")
 
 ;; Font Settings
 (message "applying font settings ...")
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil
-			:family "Inconsolata" :height 140)
-  (set-default-font "Inconsolata-14"))
+			:family "Inconsolata" :height 130)
+  (set-default-font "Inconsolata-13"))
 
 ;; set tab width in java from emacs wiki
 
@@ -175,3 +176,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; vc-git-grep pimping
+(require 'thingatpt)
+(defun my-git-grep (pattern)
+  (interactive (list (read-string "Search pattern: " (substring-no-properties (or (thing-at-point 'symbol) "")))))
+  (vc-git-grep pattern "" (substring (shell-command-to-string "git rev-parse --show-toplevel") 0 -1)))
+(if (eq system-type 'darwin)
+    (global-set-key (kbd "C-c C-f") 'my-git-grep))
