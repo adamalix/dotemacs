@@ -45,11 +45,18 @@
 
        (global-set-key [(meta return)] 'switch-full-screen)))
 
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
 (if (eq system-type 'darwin)
-    (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
+    (global-set-key (kbd "M-RET") 'toggle-fullscreen))
 (if (eq system-type 'darwin)
     (global-set-key (kbd "C-x n") 'switch-to-buffer))
-
+(global-set-key (kbd "M-8") 'pop-tag-mark)
 ;; Cursor and Line
 (message "applying cursor settings ...")
 (setq-default cursor-type 'box)
@@ -134,22 +141,23 @@
 
 ;; Experimental ensime mode
 ;; Load the ensime lisp code...
-(if (eq system-type 'darwin)
-    (add-to-list 'load-path "~/.ensime/elisp/"))
-(if (eq system-type 'darwin)
-    (require 'ensime))
-(if (eq system-type 'darwin)
-    (setenv "ENSIME_JVM_ARGS" "-Xms1G -Xmx2G -Dfile.encoding=UTF-8"))
-(if (eq system-type 'darwin)
-    (setenv  "SBT_OPTS" "-Xms1G -Xmx2G -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"))
+;(if (eq system-type 'darwin)
+;    (add-to-list 'load-path "~/.ensime/elisp/")
+;    )
+;(if (eq system-type 'darwin)
+;    (require 'ensime))
+;(if (eq system-type 'darwin)
+;    (setenv "ENSIME_JVM_ARGS" "-Xms1G -Xmx2G -Dfile.encoding=UTF-8"))
+;(if (eq system-type 'darwin)
+;    (setenv  "SBT_OPTS" "-Xms1G -Xmx2G -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"))
 ;; we need to extend the exec-path so we can call scala / sbt in ensime
 (setq exec-path (append exec-path (list "/usr/local/bin")))
 
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
 ;; if you're not using the standard scala mode.
-(if (eq system-type 'darwin)
-    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+;(if (eq system-type 'darwin)
+;    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 ;; Revert all open buffers
 (defun revert-all-buffers ()
@@ -184,3 +192,21 @@
   (vc-git-grep pattern "" (substring (shell-command-to-string "git rev-parse --show-toplevel") 0 -1)))
 (if (eq system-type 'darwin)
     (global-set-key (kbd "C-c C-f") 'my-git-grep))
+
+(require 'windmove)
+(windmove-default-keybindings)
+(projectile-global-mode)
+
+(setq projectile-enable-caching t)
+;(require 'flx-ido)
+;(ido-mode 1)
+;(ido-everywhere 1)
+;(flx-ido-mode 1)
+;(setq projectile-completion-system 'ido)
+
+(add-to-list 'load-path "~/.emacs.d/soy-mode/")
+(load "soy-mode")
+(add-to-list 'load-path "~/.emacs.d/less-css/")
+(load "less-css")
+(add-to-list 'load-path "~/.emacs.d/thrift-mode/")
+(load "thrift-mode")
