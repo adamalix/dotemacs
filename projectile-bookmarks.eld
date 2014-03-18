@@ -1,1 +1,1 @@
-("~/development/foursquare-iphone/" "~/development/foursquare.web/" "~/development/foursquare.web/.pants.bootstrap/phab/arcanist/" "~/.emacs.d/" "~/development/foursquare.web/.pants.bootstrap/phab/libphutil/")
+("~/.emacs.d/")

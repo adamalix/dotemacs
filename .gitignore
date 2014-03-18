@@ -8,3 +8,5 @@ url
 elpa/archives
 tramp
 abbrev_defs
+projectile-bookmarks.eld
+projectile.cache
