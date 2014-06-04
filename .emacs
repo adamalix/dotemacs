@@ -112,7 +112,8 @@
 (require 'paredit)
 (dolist (hook '(emacs-lisp-mode-hook
                 lisp-mode-hook
-                slime-repl-mode-hook))
+                slime-repl-mode-hook
+                scala-mode-hook))
   (add-hook hook 'enable-paredit-mode))
 
 ;; Paths
@@ -210,3 +211,13 @@
 (load "less-css")
 (add-to-list 'load-path "~/.emacs.d/thrift-mode/")
 (load "thrift-mode")
+
+;; multiple cursors
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; pared
