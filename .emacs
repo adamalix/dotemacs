@@ -220,4 +220,11 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; pared
+(global-set-key (kbd "M-C-SPC") 'set-rectangular-region-anchor)
+
+;; line numbers in margin
+(global-linum-mode t)
+
+;; git-gutter. will not work in tty!
+(require 'git-gutter-fringe)
+(global-git-gutter-mode t)
