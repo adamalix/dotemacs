@@ -95,9 +95,6 @@
 ;; Time stamps in buffers
 (display-time)
 
-;; Slime shit
-(add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
-
 ;; Set indentation in html to 4
 ;; thanks roderyc
 (add-hook 'html-mode-hook
