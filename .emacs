@@ -107,6 +107,8 @@
 (setq package-archives
     (quote (("marmalade" .
             "http://marmalade-repo.org/packages/"))))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (require 'paredit)
