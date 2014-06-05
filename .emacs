@@ -239,3 +239,5 @@
           (rename-buffer new-name)
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
+
+(electric-pair-mode t)
