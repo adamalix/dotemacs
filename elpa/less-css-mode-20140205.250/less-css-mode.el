@@ -5,7 +5,8 @@
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/less-css-mode
 ;; Keywords: less css mode
-;; Version: DEV
+;; Version: 20140205.250
+;; X-Original-Version: DEV
 ;;
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -45,6 +46,9 @@
 ;; variables header at the top of your .less file, e.g.:
 ;;
 ;; // -*- less-css-compile-at-save: t; less-css-output-directory: "../css" -*-
+;;
+;; Alternatively, you can use directory local variables to set the
+;; default value of `less-css-output-directory' for your project.
 ;;
 ;; In the case of files which are included in other .less files, you
 ;; may want to trigger the compilation of a "master" .less file on

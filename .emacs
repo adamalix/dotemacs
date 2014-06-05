@@ -206,10 +206,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/soy-mode/")
 (load "soy-mode")
-(add-to-list 'load-path "~/.emacs.d/less-css/")
-(load "less-css")
-(add-to-list 'load-path "~/.emacs.d/thrift-mode/")
-(load "thrift-mode")
 
 ;; multiple cursors
 
