@@ -222,6 +222,8 @@
 ;; git-gutter. will not work in tty!
 (require 'git-gutter-fringe)
 (global-git-gutter-mode t)
+(global-set-key (kbd "C-'") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-;") 'git-gutter:previous-hunk)
 
 ;; rename file and buffer
 ;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
@@ -241,3 +243,7 @@
           (set-buffer-modified-p nil))))))
 
 (electric-pair-mode t)
+
+;; column marker
+
+(add-hook 'scala-mode-hook (lambda () (interactive) (column-marker-1 120)))
