@@ -111,8 +111,7 @@
 (require 'paredit)
 (dolist (hook '(emacs-lisp-mode-hook
                 lisp-mode-hook
-                slime-repl-mode-hook
-                scala-mode-hook))
+                slime-repl-mode-hook))
   (add-hook hook 'enable-paredit-mode))
 
 ;; Paths
