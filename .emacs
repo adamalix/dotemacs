@@ -115,7 +115,16 @@
   (add-hook hook 'enable-paredit-mode))
 
 ;; Paths
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "PATH" (concat "/usr/local/share/npm/bin:/Users/adam/bin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/opt/go/bin:/Users/adam/development/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin" (getenv "PATH")))
+(setq exec-path (append exec-path '("/usr/local/share/npm/bin"
+                                    "/Users/adam/bin"
+                                    "/usr/local/bin"
+                                    "/usr/local/opt/go/libexec/bin"
+                                    "/opt/go/bin"
+                                    "/Users/adam/development/go/bin"
+                                    "/usr/bin"
+                                    "/usr/sbin"
+                                    "/usr/local/bin")))
 
 (if (eq system-type 'gnu/linux)
     (setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH")))
@@ -250,4 +259,34 @@
 
 ;; Go
 
+(require 'go-mode)
+(require 'company)
+(require 'company-go)
+
+(defun my-go-mode-hook ()
+  ;; Call `gofmt` before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  ;; `godef` jump keybinds
+  (local-set-key (kbd "M-.") 'godef-jump)
+  ;; `godef` jump other window
+  (local-set-key (kbd "M-C-.") 'godef-jump-other-window)
+  ;; remove unused imports
+  (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+  (local-set-key (kbd "C-c C-k") 'godoc)
+  (local-set-key (kbd "C-c C-g") 'go-goto-imports))
+
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+;; Default tab stops to 2 spaces
+(add-hook 'go-mode-hook
+          (lambda ()
+            (setq tab-width 2)
+            (setq standard-indent 2)
+            (setq indent-tabs-mode t)))
+
+(add-hook 'go-mode-hook (lambda ()
+                          (set (make-local-variable 'company-backends) '(company-go))
+                          (company-mode)))
+
+(setenv "GOPATH" (concat "/opt/go/:/Users/adam/development/go"))
 
