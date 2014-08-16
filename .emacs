@@ -247,3 +247,7 @@
 ;; column marker
 
 (add-hook 'scala-mode-hook (lambda () (interactive) (column-marker-1 120)))
+
+;; Go
+
+
