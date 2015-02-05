@@ -115,16 +115,22 @@
   (add-hook hook 'enable-paredit-mode))
 
 ;; Paths
-(setenv "PATH" (concat "/usr/local/share/npm/bin:/Users/adam/bin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/opt/go/bin:/Users/adam/development/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin" (getenv "PATH")))
-(setq exec-path (append exec-path '("/usr/local/share/npm/bin"
-                                    "/Users/adam/bin"
+(setenv "PATH" (concat "/usr/local/share/npm/bin:"
+                       "/Users/adam/bin:"
+                       "/usr/local/bin:"
+                       "/usr/bin:"
+                       "/usr/sbin:"
+                       "/usr/local/bin:"
+                       "/opt/go/1.4/bin:"
+                       "/usr/local/opt/go/libexec/bin:"
+                       (getenv "PATH")))
+(setq exec-path (append exec-path '("/Users/adam/bin"
                                     "/usr/local/bin"
-                                    "/usr/local/opt/go/libexec/bin"
-                                    "/opt/go/bin"
-                                    "/Users/adam/development/go/bin"
                                     "/usr/bin"
                                     "/usr/sbin"
-                                    "/usr/local/bin")))
+                                    "/usr/local/bin"
+                                    "/opt/go/1.4/bin"
+                                    "/usr/local/opt/go/libexec/bin")))
 
 (if (eq system-type 'gnu/linux)
     (setenv "PATH" (concat "/home/adam/bin:" (getenv "PATH")))
@@ -158,8 +164,6 @@
 ;    (setenv "ENSIME_JVM_ARGS" "-Xms1G -Xmx2G -Dfile.encoding=UTF-8"))
 ;(if (eq system-type 'darwin)
 ;    (setenv  "SBT_OPTS" "-Xms1G -Xmx2G -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"))
-;; we need to extend the exec-path so we can call scala / sbt in ensime
-(setq exec-path (append exec-path (list "/usr/local/bin")))
 
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
@@ -264,6 +268,7 @@
 (require 'company-go)
 
 (defun my-go-mode-hook ()
+  (setq gofmt-command "goimports")
   ;; Call `gofmt` before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
   ;; `godef` jump keybinds
@@ -288,5 +293,7 @@
                           (set (make-local-variable 'company-backends) '(company-go))
                           (company-mode)))
 
-(setenv "GOPATH" (concat "/opt/go/:/Users/adam/development/go"))
-
+(setenv "GOROOT" "/usr/local/opt/go/libexec")
+(setenv "GOPATH" "/opt/go/1.4")
+(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+(add-hook 'go-mode-hook 'go-oracle-mode)
