@@ -121,7 +121,7 @@
                        "/usr/bin:"
                        "/usr/sbin:"
                        "/usr/local/bin:"
-                       "/opt/go/1.4/bin:"
+                       "/opt/go/1.5.1/bin:"
                        "/usr/local/opt/go/libexec/bin:"
                        (getenv "PATH")))
 (setq exec-path (append exec-path '("/Users/adam/bin"
@@ -129,7 +129,7 @@
                                     "/usr/bin"
                                     "/usr/sbin"
                                     "/usr/local/bin"
-                                    "/opt/go/1.4/bin"
+                                    "/opt/go/1.5.1/bin"
                                     "/usr/local/opt/go/libexec/bin")))
 
 (if (eq system-type 'gnu/linux)
@@ -261,6 +261,14 @@
 
 (add-hook 'scala-mode-hook (lambda () (interactive) (column-marker-1 120)))
 
+;; JSON
+
+(defun my-json-mode-hook ()
+  (setq tab-width 2)
+  (setq standard-indent 2))
+
+(add-hook 'json-mode-hook 'my-json-mode-hook)
+
 ;; Go
 
 (require 'go-mode)
@@ -294,6 +302,7 @@
                           (company-mode)))
 
 (setenv "GOROOT" "/usr/local/opt/go/libexec")
-(setenv "GOPATH" "/opt/go/1.4")
-(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
-(add-hook 'go-mode-hook 'go-oracle-mode)
+(setenv "GOPATH" "/opt/go/1.5.1")
+;;(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+;;(add-hook 'go-mode-hook 'go-oracle-mode)
+(put 'upcase-region 'disabled nil)
