@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil nil ("go-projectile.el") (22071 51143 516092
+;;;### (autoloads nil nil ("go-projectile.el") (22071 51591 722945
 ;;;;;;  0))
 
 ;;;***
