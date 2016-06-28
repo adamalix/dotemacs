@@ -182,20 +182,20 @@
     (message "Refreshed open files."))
 
 ;; pretty lambda from nick
-(global-set-key (kbd "C-c l")
-                (lambda () (interactive) (insert "λ")))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; (global-set-key (kbd "C-c l")
+;;                 (lambda () (interactive) (insert "λ")))
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default))))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  )
 
 ;; vc-git-grep pimping
 (require 'thingatpt)
@@ -306,3 +306,12 @@
 ;;(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 ;;(add-hook 'go-mode-hook 'go-oracle-mode)
 (put 'upcase-region 'disabled nil)
+
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-agenda-files (list "~/development/adam-org/"))
+(setq org-log-done t)
+
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
