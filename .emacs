@@ -102,8 +102,8 @@
             (setq-default sgml-basic-offset 4)))
 
 (setq package-archives
-    (quote (("marmalade" .
-            "http://marmalade-repo.org/packages/"))))
+      '(("marmalade" . "http://marmalade-repo.org/packages/")
+        ("melpa-stable" . "http://stable.melpa.org/packages/")))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
@@ -121,7 +121,7 @@
                        "/usr/bin:"
                        "/usr/sbin:"
                        "/usr/local/bin:"
-                       "/opt/go/1.6/bin:"
+                       "/opt/go/1.7/bin:"
                        "/usr/local/opt/go/libexec/bin:"
                        (getenv "PATH")))
 (setq exec-path (append exec-path '("/Users/adam/bin"
@@ -129,7 +129,7 @@
                                     "/usr/bin"
                                     "/usr/sbin"
                                     "/usr/local/bin"
-                                    "/opt/go/1.6/bin"
+                                    "/opt/go/1.7/bin"
                                     "/usr/local/opt/go/libexec/bin")))
 
 (if (eq system-type 'gnu/linux)
@@ -168,8 +168,11 @@
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
 ;; if you're not using the standard scala mode.
-;(if (eq system-type 'darwin)
-;    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+;; (if (eq system-type 'darwin)
+;;    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+
+(use-package ensime
+  :pin melpa-stable)
 
 ;; Revert all open buffers
 (defun revert-all-buffers ()
@@ -302,7 +305,7 @@
                           (company-mode)))
 
 (setenv "GOROOT" "/usr/local/opt/go/libexec")
-(setenv "GOPATH" "/opt/go/1.6")
+(setenv "GOPATH" "/opt/go/1.7")
 ;;(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 ;;(add-hook 'go-mode-hook 'go-oracle-mode)
 (put 'upcase-region 'disabled nil)

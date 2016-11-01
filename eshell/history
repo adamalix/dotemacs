@@ -1,34 +1,3 @@
-ls
-cd development/symphony-api/
-ls
-cd development/symphony-api/
-ls
-cd development/symphony-api/
-ls
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-ls
-cd development/symphony-api/
-cd development/symphony-scripts/
-cd ../symphony-api/
-ls
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-ls
-gs
-git status
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-ls
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
 cd development/symphony-api/
 cd development/symphony-api/
 git status
@@ -126,3 +95,34 @@ cd development/symphony-api/
 cd development/symphony-api/
 cd development/symphony-api/
 cd development/symphony-api/
+cd development/
+ls
+ls
+cd dev
+cd development/
+mkdir sidewalk_labs
+cd 
+cd development/slackchallenge/
+ls
+cd ..
+cd $GOPATH
+cd $GOPATH/
+which godef
+cd src/github.com/adamalix/practice_dropbox/
+ls
+cd 
+ls
+cd development/
+ls
+cd slack/
+which sbt
+cd 
+cd .emacs.d/
+ls
+cd development/slack/
+ls
+which sbt
+cd development/slack/
+ls
+cd development/bigbigdota-analysis/
+ls
