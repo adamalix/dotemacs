@@ -121,7 +121,7 @@
                        "/usr/bin:"
                        "/usr/sbin:"
                        "/usr/local/bin:"
-                       "/opt/go/1.7/bin:"
+                       "/opt/go/1.7.4_1/bin:"
                        "/usr/local/opt/go/libexec/bin:"
                        (getenv "PATH")))
 (setq exec-path (append exec-path '("/Users/adam/bin"
@@ -129,7 +129,7 @@
                                     "/usr/bin"
                                     "/usr/sbin"
                                     "/usr/local/bin"
-                                    "/opt/go/1.7/bin"
+                                    "/opt/go/1.7.4_1/bin"
                                     "/usr/local/opt/go/libexec/bin")))
 
 (if (eq system-type 'gnu/linux)
@@ -172,6 +172,7 @@
 ;;    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 (use-package ensime
+  :ensure t
   :pin melpa-stable)
 
 ;; Revert all open buffers
@@ -305,7 +306,7 @@
                           (company-mode)))
 
 (setenv "GOROOT" "/usr/local/opt/go/libexec")
-(setenv "GOPATH" "/opt/go/1.7")
+(setenv "GOPATH" "/opt/go/1.7.4_1")
 ;;(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 ;;(add-hook 'go-mode-hook 'go-oracle-mode)
 (put 'upcase-region 'disabled nil)
@@ -318,3 +319,17 @@
 
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (protobuf-mode use-package thrift scala-mode2 paredit multiple-cursors markdown-mode magit less-css-mode json-mode js2-mode go-projectile go-direx git-gutter-fringe flymake-jshint ensime company-go column-marker caml))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

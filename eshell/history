@@ -1,62 +1,5 @@
 cd development/symphony-api/
 cd development/symphony-api/
-git status
-gs
-ls
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-gs
-git status
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api
-ls
-gs
-git status
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-app/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
 cd development/symphony-api/
 cd development/symphony-api/
 cd development/symphony-api/
@@ -125,4 +68,61 @@ which sbt
 cd development/slack/
 ls
 cd development/bigbigdota-analysis/
+ls
+cd dev/golden-path/
+ls
+cd adamalix-golden-path-tutorial/
+ls
+cd dev/homer/
+ls
+cd just-for-you/
+cd dev/homer/
+cd just-for-you/
+cd dev/tunigo/spaces/
+git status
+cd ..
+ls
+cd spaces-proto/
+cd ../../homer/spaces/
+cd ../..
+ls
+cd datainfra/event-schemas/
+ls
+cd ../
+cd ../spotify-sdk/client-core/
+cd ../..
+cd homer/
+cd just-for-you/
+git pull
+gs
+git remote -v
+cd ../recent-listening-recs/
+cd dev/
+ls
+gs
+cd homer/spaces/
+ls
+cd ..
+cd kwik-e-mart/
+cd dev/datainfra/event-schemas/
+cd 
+cd dev/
+ls
+gs
+ls
+cd spotify-sdk/
+cd client-core/
+ls
+cd ../..
+ls
+cd iOS/client-ios/
+cd dev/
+ls
+cd dev/
+ls
+cd spotify/scio/
+cd dev/spotify/scio/
+cd dev/spotify/scio/
+which sbt
+cd dev/
 ls
