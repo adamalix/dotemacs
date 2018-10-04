@@ -1,128 +1,128 @@
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/
-cd symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
+find . | grep txt
+ls
+ls lab_sessions/day2/long/
+ls lab_sessions/day2/long/data/
+cd 
+cd dev/zero/intro/
+cd dev/
+ls
+cd ../dev/homer/recent-listening-recs/
+cd dev/tunigo/spaces-proto/
+ls
+cd ../spaces-i18n/
+cd ../riptide/
+cd dev/tunigo/riptide/
+cd ../../zero/intro/
+gs
+pwd
+cd ../..
+cd zero/nft-experiments/
 cd ..
-cd symphony-api/
-ls
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/
-ls
-cd symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/symphony-api/
-cd development/
-ls
-ls
-cd dev
-cd development/
-mkdir sidewalk_labs
-cd 
-cd development/slackchallenge/
-ls
+cd intro/
+cd ../../
+cd tunigo/spaces-proto/
+cd ../spaces/
+cd ../..
+cd zero/intro/
 cd ..
-cd $GOPATH
-cd $GOPATH/
-which godef
-cd src/github.com/adamalix/practice_dropbox/
+cd ..
+cd spotify/scio/
+cd dev/
+find . | grep scio
+cd dev/
+cd spotify/scio/
+cd ../..
+cd homer/home-personalization-pipeline/
 ls
-cd 
 ls
-cd development/
+cd dev/tunigo/spaces-proto/
 ls
-cd slack/
-which sbt
-cd 
-cd .emacs.d/
-ls
-cd development/slack/
-ls
-which sbt
-cd development/slack/
-ls
-cd development/bigbigdota-analysis/
-ls
-cd dev/golden-path/
-ls
-cd adamalix-golden-path-tutorial/
-ls
-cd dev/homer/
-ls
-cd just-for-you/
-cd dev/homer/
-cd just-for-you/
-cd dev/tunigo/spaces/
+cd dev/tunigo/spaces-proto/
+cd dev/tunigo/spaces-proto/
+cd
+cd dev/homer/home-personalization-pipeline/
+gs
 git status
+git branch
+ls
+cd dev/home-startpage/intro/
+gs
+git status
+cd dev/homer/just-for-you/
+cd ../springfield/
+cd dev/homer/nft-home-curator-debug-proto/
+ls
+cd ../..
+cd tunigo/spaces-i18n/
+cd dev/
+cd apollo/apollo-modules/
+cd ../../skeletons/simple-apollo-standalone/
+ls
 cd ..
-ls
-cd spaces-proto/
-cd ../../homer/spaces/
+cd ../apollo/apollo-modules/
 cd ../..
-ls
-cd datainfra/event-schemas/
-ls
+cd homer/nft-home-curator-debug-proto/
+cd ../nft-home-curator-debug/
 cd ../
-cd ../spotify-sdk/client-core/
-cd ../..
-cd homer/
-cd just-for-you/
+cd recent-listening-recs/
 git pull
 gs
-git remote -v
-cd ../recent-listening-recs/
-cd dev/
-ls
-gs
-cd homer/spaces/
-ls
-cd ..
-cd kwik-e-mart/
-cd dev/datainfra/event-schemas/
+git status
+git branch
+git checkout master
+git pull
+cd ../just-for-you/
+cd ../nft-home-curator-debug/
+cd ../more-like-x/
+cd ../just-for-you/
+cd ../nft-home-curator-debug-proto/
 cd 
 cd dev/
+mkdir -p vector-model-generators
+cd vector-model-generators/
+cd vector-composites/
 ls
+cd dev/homer/recent-listening-recs/
+cd ../just-for-you/
+cd dev/homer/home-personalization-pipeline/
+git pull
+cd dev/feedback-recs/accesspoint2/
+cd ../../puppet/spotify-puppet/
 gs
+git status
+cd ../../homer/home-personalization-pipeline/
 ls
-cd spotify-sdk/
-cd client-core/
+cd ../../tunigo/spaces-i18n/
+ls
+cd dev/home-startpage/
+cd intro/
 ls
 cd ../..
 ls
-cd iOS/client-ios/
-cd dev/
+cd homer/home-personalization-pipeline/
+virutalenv
+cd dev/bart
 ls
-cd dev/
+cd bart-historical-success/
+cd ../../puppet/spotify-puppet/
+cd ../../homer/nft-listens-pipeline/
 ls
-cd spotify/scio/
-cd dev/spotify/scio/
-cd dev/spotify/scio/
-which sbt
-cd dev/
+cd dev/homer/
+cd nft-listens-pipeline/
 ls
+cd dev/homer/nft-listens-pipeline/
+cd ../
+cd ../datainfra/event-schemas/
+cd ../../bart/
+ls
+cd bart-training-data-pipeline/
+ls
+cd dev/bart/bart-training-data-pipeline/
+cd ../../homer/home-personalization-pipeline/
+cd ../../bart/bart-historical-success/
+cd dev/bart/home-ranking/
+cd ../bart-featurization/
+cd dev/home-startpage/intro/
+ls
+cd dev/home-startpage/int
+cd dev/home-startpage/intro/

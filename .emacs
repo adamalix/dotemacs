@@ -326,10 +326,25 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (protobuf-mode use-package thrift scala-mode2 paredit multiple-cursors markdown-mode magit less-css-mode json-mode js2-mode go-projectile go-direx git-gutter-fringe flymake-jshint ensime company-go column-marker caml))))
+    (jedi protobuf-mode use-package thrift scala-mode2 paredit multiple-cursors markdown-mode magit less-css-mode json-mode js2-mode go-projectile go-direx git-gutter-fringe flymake-jshint ensime company-go column-marker caml))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;; jedi
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:use-shortcuts t)
+(setq jedi:complete-on-dot t)
+
+
+(defun increment-number-at-point ()
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
